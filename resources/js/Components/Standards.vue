@@ -19,10 +19,13 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
     export default {
         props: ['standards'],
         methods: {
+            ...mapActions('standards', ['addItemToStandards', 'removeItemFromStandards']),
             updateStandard (standard, event){
+                console.log(event.target.checked)
                 if(event.target.checked){
                     this.addStandard(standard)
                 }else{
@@ -31,6 +34,7 @@
             },
             addStandard (standard) {
                 this.$store.dispatch('standards/addItemToStandards', standard)
+
             },
             removeStandard (standard) {
                 this.$store.dispatch('standards/removeItemFromStandards', standard)

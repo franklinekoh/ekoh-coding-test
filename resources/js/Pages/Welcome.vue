@@ -159,7 +159,9 @@
         methods: {
             // Implement these methods:
             removeStandard () {},
-            clearAllStandards () {},
+            clearAllStandards () {
+                this.$store.dispatch('standards/clearAllItemsFromStandards')
+            },
         },
         created() {
             this.standards = standards;
