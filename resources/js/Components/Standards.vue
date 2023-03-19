@@ -25,7 +25,6 @@ import { mapActions } from 'vuex'
         methods: {
             ...mapActions('standards', ['addItemToStandards', 'removeItemFromStandards']),
             updateStandard (standard, event){
-                console.log(event.target.checked)
                 if(event.target.checked){
                     this.addStandard(standard)
                 }else{
