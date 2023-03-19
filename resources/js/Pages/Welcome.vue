@@ -139,7 +139,7 @@
     import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/vue/24/outline'
     import standards from '../standards.js'
     import Grades from '@/Components/Grades.vue';
-    import { mapState, mapGetters } from 'vuex'
+    import { mapGetters } from 'vuex'
 
     export default {
         components: {

@@ -32,11 +32,11 @@ import { mapActions } from 'vuex'
                 }
             },
             addStandard (standard) {
-                this.$store.dispatch('standards/addItemToStandards', standard)
+                this.addItemToStandards(standard)
 
             },
             removeStandard (standard) {
-                this.$store.dispatch('standards/removeItemFromStandards', standard)
+                this.removeItemFromStandards(standard)
             }
         }
     }
