@@ -7,7 +7,7 @@
                     name="comments"
                     type="checkbox"
                     class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                    @change="addStandard(standard)"
+                    @change="updateStandard(standard, $event)"
                 />
             </div>
             <div class="ml-3 text-sm leading-6">
@@ -22,8 +22,18 @@
     export default {
         props: ['standards'],
         methods: {
+            updateStandard (standard, event){
+                if(event.target.checked){
+                    this.addStandard(standard)
+                }else{
+                    this.removeStandard(standard)
+                }
+            },
             addStandard (standard) {
                 this.$store.dispatch('standards/addItemToStandards', standard)
+            },
+            removeStandard (standard) {
+                this.$store.dispatch('standards/removeItemFromStandards', standard)
             }
         }
     }
